@@ -1,359 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>iPod Shop USA - Shop</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iPod Shop USA</title>
 
 <style>
 html, body {
-  height: 100%;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
 }
 
 /* Header */
 header {
-  background-color: #004080;
-  color: white;
-  padding: 20px;
-  display: flex;
-  align-items: center;
+    background-color: #004080;
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
 }
 
 header img {
-  height: 60px;
-  margin-right: 20px;
+    height: 60px;
+    margin-right: 20px;
 }
 
 header h1 {
-  margin: 0;
-  font-size: 1.8em;
+    margin: 0;
+    font-size: 1.8em;
 }
 
 /* Navigation */
 nav {
-  background-color: #004080;
+    background-color: #004080;
 }
 
 nav a {
-  color: white;
-  padding: 14px 20px;
-  display: inline-block;
-  text-decoration: none;
-  font-weight: bold;
+    color: white;
+    padding: 14px 20px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 nav a:hover {
-  background-color: #002244;
+    background-color: #002244;
 }
 
-/* Main */
+/* Main Content */
 main {
-  flex-grow: 1;
-  padding: 40px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+    flex-grow: 1;
+    padding: 50px;
 }
 
-/* Page Title */
-.page-title {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 10px;
-  margin-bottom: 20px;
+/* Services */
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
 
-.page-title h2 {
-  margin: 0;
-  color: #004080;
+.service {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    width: 300px;
+    text-align: center;
+    background-color: white;
 }
 
-.page-title p {
-  margin: 0;
-  color: #333;
+.service h3 {
+    margin-bottom: 10px;
+    color: #004080;
 }
 
-/* Filters */
-.filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 20px 0 30px;
+/* Contact */
+.contact {
+    background-color: #f2f2f2;
+    padding: 30px 40px;
+    border-radius: 5px;
+    margin: 40px auto;
+    max-width: 600px;
+    text-align: center;
+    border: 2px solid #004080;
 }
 
-.filter-btn {
-  border: 2px solid #004080;
-  background: white;
-  color: #004080;
-  padding: 10px 14px;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
+.contact button {
+    background-color: #004080;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
 }
 
-.filter-btn:hover {
-  background: #e9f0ff;
-}
-
-.filter-btn.active {
-  background: #004080;
-  color: white;
-}
-
-/* Product Grid */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 18px;
-}
-
-.card {
-  grid-column: span 12;
-  background: white;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Responsive columns */
-@media (min-width: 640px) {
-  .card { grid-column: span 6; }
-}
-@media (min-width: 960px) {
-  .card { grid-column: span 4; }
-}
-
-.card-img {
-  height: 250px;
-  background: #e6e6e6;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #555;
-  font-weight: bold;
-}
-
-/* Use real images by replacing the placeholder with <img> */
-.card-img img {
-  width: 80%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.card-body {
-  padding: 50px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.card-title {
-  margin: 0;
-  color: #004080;
-  font-size: 1.1em;
-}
-
-.card-desc {
-  margin: 0;
-  color: #333;
-  font-size: 0.95em;
-  line-height: 1.35;
-}
-
-.card-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-  margin-top: 6px;
-}
-
-.price {
-  font-size: 1.1em;
-  font-weight: bold;
-  color: #004080;
-}
-
-.badge {
-  font-size: 0.85em;
-  padding: 6px 10px;
-  border-radius: 999px;
-  border: 1px solid #004080;
-  color: #004080;
-  background: #f4f7ff;
-  white-space: nowrap;
-}
-
-.card-actions {
-  display: flex;
-  gap: 10px;
-  margin-top: 6px;
-}
-
-.btn {
-  flex: 1;
-  background-color: #004080;
-  color: white;
-  padding: 10px 12px;
-  border: none;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-}
-
-.btn:hover {
-  background-color: #002244;
-}
-
-.btn.secondary {
-  background: white;
-  color: #004080;
-  border: 2px solid #004080;
-}
-
-.btn.secondary:hover {
-  background: #e9f0ff;
+.contact button:hover {
+    background-color: #002244;
 }
 
 /* Footer */
 footer {
-  background-color: #004080;
-  color: white;
-  text-align: center;
-  padding: 10px;
+    background-color: #004080;
+    color: white;
+    text-align: center;
+    padding: 10px;
 }
 </style>
 </head>
 
 <body>
+
 <header>
-  <img src="ipod-8bit-logo.png" alt="iPod Shop USA 8-bit logo">
-  <h1>iPod Shop USA</h1>
+    <img src="ipod-8bit-logo.png" alt="iPod Shop USA 8-bit logo">
+    <h1>iPod Shop USA</h1>
 </header>
 
 <nav>
-  <a href="/index.html">Home</a>
-  <a href="/shop.html">Shop</a>
-  <a href="/repair.html">Repair</a>
-  <a href="/update.html">Update</a>
-  <a href="/support.html">Support</a>
-  <a href="/contact.html">Contact</a>
+    <a href="/shop.html">Shop</a>
+    <a href="/repair.html">Repair</a>
+    <a href="/update.html">Update</a>
+    <a href="/support.html">Support</a>
+    <a href="/contact.html">Contact</a>
 </nav>
 
 <main>
-  <div class="page-title">
-    <h2>Shop</h2>
-    <p>Retro devices, parts, and upgrades — new stock added often.</p>
-  </div>
 
-  <!-- Category Filters -->
-  <div class="filters" role="group" aria-label="Product categories">
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="R36S">R36S</button>
-   <!-- <button class="filter-btn" data-filter="parts">Parts</button>
-    <button class="filter-btn" data-filter="consoles">Consoles</button>
-    <button class="filter-btn" data-filter="audio">Audio</button>
-    <button class="filter-btn" data-filter="accessories">Accessories</button>
-    -->
-  </div>
-
-  <!-- Product Grid -->
-  <div class="grid" id="productGrid">
-
-   
-    <article class="card" data-category="R36S">
-      <div class="card-img">
-        <img src="Products\R36S\R36SW.jpg">
-      </div>
-      <div class="card-body">
-        <h3 class="card-title">R36S - White</h3>
-        <p class="card-desc">Tested & working. Preloaded with retro games. Supported software. Optimized for English </p>
-        <div class="card-meta">
-          <span class="price">$55</span>
-          <span class="badge">R36S</span>
+<section id="services">
+    <div class="services">
+        <div class="service">
+            <h3>Shop</h3>
+            <p>View stock of retro electronics.</p>
         </div>
-        <div class="card-actions">
-          <a class="btn" href="https://buy.stripe.com/dRm9ATeVWdnq7LYd6m57W01">Buy</a>
-        </div>
-      </div>
 
-    </article>
-     <article class="card" data-category="R36S">
-      <div class="card-img">
-        <img src="Products\R36S\R36SB.jpg">
-      </div>
-      <div class="card-body">
-        <h3 class="card-title">R36S - Black</h3>
-        <p class="card-desc">Tested & working. Preloaded with retro games. Supported software. Optimized for English </p>
-        <div class="card-meta">
-          <span class="price">$55</span>
-          <span class="badge">R36S</span>
+        <div class="service">
+            <h3>Repair</h3>
+            <p>Amplifiers, game consoles, musical instruments, PCs, handheld devices, and more.</p>
         </div>
-        <div class="card-actions">
-          <a class="btn" href="https://buy.stripe.com/00w00jaFGfvyc2efeu57W02">Buy</a>
-        </div>
-      </div>
-    </article>
 
-    
-<!-- 
-    <article class="card" data-category="accessories">
-      <div class="card-img">IMAGE PLACEHOLDER</div>
-      <div class="card-body">
-        <h3 class="card-title">iPod Dock + 30-pin Cable</h3>
-        <p class="card-desc">Docking station with compatible cable. Great for desk setups.</p>
-        <div class="card-meta">
-          <span class="price">$19.99</span>
-          <span class="badge">Accessories</span>
+        <div class="service">
+            <h3>Update</h3>
+            <p>Learn how to update certain retro consoles yourself.</p>
         </div>
-        <div class="card-actions">
-          <a class="btn" href="#">Buy</a>
+
+        <div class="service">
+            <h3>Support</h3>
+            <p>Resolve issues with warrantied items.</p>
         </div>
-      </div>
-    </article>
+    </div>
+</section>
 
--->
+<section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <button aria-label="Request a quote"
+        onclick="window.location.href='https://www.winters-cleaning.com/formsubmission'">
+        Request a Quote
+    </button>
+</section>
 
-  </div>
 </main>
 
 <footer>
-  <p>&copy; 2026 iPod-Shop.com. All rights reserved.</p>
+    <p>&copy; 2026 iPod-Shop.com. All rights reserved.</p>
 </footer>
-
-<script>
-  // Simple front-end category filtering (no database required)
-  const buttons = document.querySelectorAll('.filter-btn');
-  const cards = document.querySelectorAll('.card');
-
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const filter = btn.getAttribute('data-filter');
-      cards.forEach(card => {
-        const category = card.getAttribute('data-category');
-        const show = (filter === 'all' || category === filter);
-        card.style.display = show ? 'flex' : 'none';
-      });
-    });
-  });
-</script>
 
 </body>
 </html>
