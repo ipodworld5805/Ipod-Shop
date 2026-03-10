@@ -158,10 +158,10 @@ nav a {
 <section>
 
     <div class="hero">
-        <img src="R36SW.jpg" alt="R36S handheld console">
+        <img src="R36SW-AngledFrontON.jpg" alt="R36S handheld console">
         <div class="body">
             <h2>R36S Update Guide</h2>
-            <p>Use this guide to back up your SD card and update your R36S safely.</p>
+            <p>Use this guide to update your handheld to the most recent version of dArk OS.</p>
             <div class="buttons">
                 <a class="btn secondary" href="/update.html">Back to Update Guides</a>
                 <a class="btn" href="/contact.html">Need Help?</a>
@@ -172,7 +172,9 @@ nav a {
     <div class="box">
         <h3>What You Need</h3>
         <ul>
-            <li>MicroSD card (the one in your R36S)</li>
+            <li>Rufus USB Tools</li>
+            <li>7-Zip</li>
+            <li>~35GB of storage</li>
             <li>MicroSD card reader (USB)</li>
             <li>A Windows PC, Mac, or Linux computer</li>
             <li>10–30 minutes of time</li>
@@ -185,32 +187,85 @@ nav a {
             <li>Power off the R36S completely.</li>
             <li>Remove the MicroSD card and insert it into your computer.</li>
             <li>Create a folder named <strong>R36S Backup</strong> on your computer.</li>
-            <li>Copy all files from the SD card into that folder.</li>
+            <li>Copy all files from the BOOT folder on the SD card into that folder.</li>
+            <li>Create a folder named <strong>EASYROM Backup</strong> on your computer.</li>
+            <li>Copy all files from the EASYROM folder on the SD card into that folder.</li>
         </ol>
-        <p><strong>Tip:</strong> If your update goes wrong, this backup saves you.</p>
     </div>
 
     <div class="box">
         <h3>Step 2: Get the Update Files</h3>
         <ul>
-            <li>Download the correct firmware/update package for your R36S model.</li>
+            <li>Download dArkOS_G350_trixie_02012026.img.7z.001</li>
+            <li>Download dArkOS_G350_trixie_02012026.img.7z.002</li>
         </ul>
 
         <!-- Replace this link later when you have an actual file -->
         <div class="buttons">
-            <a class="btn" href="#" onclick="alert('Add your download link here later!'); return false;">Download Update Files</a>
+            <a class="btn" href="https://github.com/christianhaitian/dArkOS/releases">Download Update Files</a>
         </div>
     </div>
 
     <div class="box">
-        <h3>Step 3: Install the Update</h3>
+        <h3>Step 3: Prepare the .img File</h3>
         <ol>
-            <li>Extract the downloaded zip file on your computer (if it’s zipped).</li>
-            <li>Follow the update package instructions (some updates require flashing an SD image).</li>
-            <li>When finished, safely eject the SD card from your computer.</li>
-            <li>Insert the SD card back into the R36S and power it on.</li>
+            <li>Move both files to their own folder.</li>
+            <li>Right-click the .001 file and select extract with 7-Zip. (It will automatically combine with .002)</li>
+            
         </ol>
-        <p><strong>Important:</strong> Do not remove power while the device is updating.</p>
+        <div class="buttons">
+            <a class="btn" href="https://www.7-zip.org/download.html">Download 7-Zip</a>
+        </div>
+    </div>
+
+    <div class="box">
+        <h3>Step 4: Format SD Card</h3>
+        <ol>
+            <li>Open Disk Managment.</li>
+            <li>Select SD card.</li>
+            <li>Select "Format drive".</li>
+        </ol>
+    </div>
+
+    <div class="box">
+        <h3>Step 5: Install .img File</h3>
+        <ol>
+            <li>Open Rufus.</li>
+            <li>Select the SD card and dArkOS_RG351MP_trixie_02012026.img as the image file</li>
+            <li>Click ready and yes to all the warnings</li>
+            
+        </ol>
+        <div class="buttons">
+            <a class="btn" href="https://rufus.ie/en/#download">Download Rufus</a>
+        </div>
+    </div>
+
+     <div class="box">
+        <h3>Step 6: Change .dtb file</h3>
+        <ol>
+            <li>Open the boot Partition on the SD card.</li>
+            <li>Replace rk3326-rg351mp-linux.dtb with the one from your backup file.</li>
+            
+        </ol>
+    </div>
+
+    <div class="box">
+        <h3>Step 7: Create EASYROM partition</h3>
+        <ol>
+            <li>Eject SD card from Computer and insert into handheld.</li>
+            <li>Turn Handheld on and wait for precess to complete.</li>
+            
+        </ol>
+    </div>
+
+    <div class="box">
+        <h3>Step 8: Populate EASYROM folder</h3>
+        <ol>
+            <li>Return the SD card to your computer.</li>
+            <li>Copy files from the EASYROM Backup folder on your compter to the EASYROM partition on the SD card.</li>
+            <li>Reinsert the SD card into your handheld and test a few games.</li>
+            
+        </ol>
     </div>
 
     <div class="box">
