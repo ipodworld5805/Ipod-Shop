@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ipod Shop - Update</title>
+
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+    }
+    header {
+        background-color: #004080;
+        color: white;
+        padding: 5px;
+        display: flex;
+        align-items: center;
+    }
+    header img {
+        height: 60px;
+        margin-right: 20px;
+    }
+    header h1 {
+        margin: 0;
+        font-size: 1.8em;
+    }
+    header p {
+        margin: 5px 0 0;
+        font-size: 1em;
+    }
+    nav {
+        background-color: #004080;
+    }
+    nav a {
+        color: white;
+        padding: 14px 20px;
+        display: inline-block;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    nav a:hover {
+        background-color: #002244;
+    }
+    section {
+        padding: 50px;
+        flex-grow: 1;
+    }
+
+    /* 👇 UPDATED HERE */
+    .services {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        margin-bottom: 40px; /* spacing between panels */
+    }
+
+    .service {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 15px;
+        width: 300px;
+        text-align: center;
+        background-color: white;
+    }
+    .service h3 {
+        margin: 0 0 10px;
+        color: #004080;
+    }
+    .service p {
+        margin: 0 0 10px;
+        color: #333;
+        line-height: 1.4;
+    }
+    .service img{
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        background: #e6e6e6;
+        display: block;
+    }
+    .service .btn {
+        display: inline-block;
+        background-color: #004080;
+        color: white;
+        padding: 10px 16px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1em;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background-color 0.3s;
+        margin-top: 8px;
+    }
+    .service .btn:hover {
+        background-color: #002244;
+    }
+    .notice {
+        background-color: #f2f2f2;
+        padding: 20px 40px 20px;
+        border-radius: 5px;
+        margin: 0 auto 30px;
+        max-width: 900px;
+        border: 2px solid #004080;
+    }
+    .notice h2 {
+        margin-top: 0;
+        color: #004080;
+    }
+    .notice ul {
+        margin: 10px 0 0;
+        padding-left: 18px;
+        color: #333;
+        line-height: 1.5;
+    }
+    footer {
+        background-color: #004080;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        margin-top: auto;
+    }
+</style>
+</head>
+
+<body>
+<header>
+    <img src="ipod8bitlogo.png" alt="ipod-8bit-logo">
+    <div>
+        <h1>iPod Shop USA</h1>
+    </div>
+</header>
+
+<nav>
+    <a href="/home.html">Home</a>
+    <a href="/shop.html">Shop</a>
+    <a href="/repair.html">Repair</a>
+    <a href="/info.html">Info</a>
+    <a href="/contact.html">Support</a>
+</nav>
+
+<section>
+    <div class="notice">
+        <h2>Update Guides</h2>
+        <ul>
+            <li>Back up your SD card or device storage before updating.</li>
+            <li>Use a good SD card and reader and do not interrupt file transfers.</li>
+        </ul>
+    </div>
+
+    <div class="services">
+        <div class="service">
+            <img src="R36SW-Front.png" alt="R36S handheld">
+            <h3>Hotkeys</h3>
+            <p>Commonly used shortcut buttons.</p>
+            <a class="btn" href="/r36shotkeys.html">View Guide</a>
+        </div>
+    </div>
+
+    <div class="services">
+        <div class="service">
+            <img src="R36SW-Front.png" alt="R36S handheld">
+            <h3>Update Guide</h3>
+            <p>Firmware + SD card setup guide, backup steps, and common fixes.</p>
+            <a class="btn" href="/r36supdateguide.html">View Guide</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 iPod-Shop.com. All rights reserved.</p>
+</footer>
+</body>
+</html>
